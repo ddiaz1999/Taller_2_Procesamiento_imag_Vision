@@ -31,9 +31,8 @@ class imageShape: #Se crea la clase imageShape
             triangle_cnt = np.array([p1,p2,p3]) #arreglo 3x2 con los vertices
             triangle_cnt = triangle_cnt.astype(np.int)
 
-            #se centra y dibuja la figura en la imagen
-            triangle_cnt = triangle_cnt + image_center
-            cv2.drawContours(self.shape, [triangle_cnt], 0, (255, 255, 0), -1)
+            triangle_cnt = triangle_cnt + image_center #se centra la figura en la imagen
+            cv2.drawContours(self.shape, [triangle_cnt], 0, (255, 255, 0), -1) #dibuja la figura en la imagen
 
         if self.image_name == 'cuadrado':
             side_length = int(min(self.width,self.height)/2) #longitud de los lados del cuadrado
@@ -53,9 +52,8 @@ class imageShape: #Se crea la clase imageShape
             square_cnt = np.dot(square_cnt,rotation_matrix) #el resultado sera una matriz 4x2 y en cada fila estaran los nuevos vertices rotados
             square_cnt = square_cnt.astype(np.int)
 
-            #se centra y dibuja la figura en la imagen
-            square_cnt = square_cnt + image_center
-            cv2.drawContours(self.shape, [square_cnt], 0, (255, 255, 0), -1)
+            square_cnt = square_cnt + image_center #se centra la figura en la imagen
+            cv2.drawContours(self.shape, [square_cnt], 0, (255, 255, 0), -1) #se dibuja la figura en la imagen
 
         if self.image_name == 'rectangulo':
             horizontal_side = int(self.width/2) #longitud lado horizontal
@@ -70,9 +68,8 @@ class imageShape: #Se crea la clase imageShape
             rectangle_cnt = np.array([p3, p1, p2, p4]) #matriz 4x2 cada fila es un vertice
             rectangle_cnt = rectangle_cnt.astype(np.int)
 
-            #se centra y dibuja la figura en la imagen
-            rectangle_cnt = rectangle_cnt + image_center
-            cv2.drawContours(self.shape, [rectangle_cnt], 0, (255, 255, 0), -1)
+            rectangle_cnt = rectangle_cnt + image_center #se centra la figura en la imagen
+            cv2.drawContours(self.shape, [rectangle_cnt], 0, (255, 255, 0), -1) #se dibuja la figura en la imagen
 
         if self.image_name == 'circulo':
             radius = int(min(self.width,self.height)/4) #longitud del radio de la circunferencia
