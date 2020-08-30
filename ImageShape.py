@@ -50,7 +50,7 @@ class imageShape: #Se crea la clase imageShape
             rotation_angle = np.pi / 4. #angulo de 45 grados en radianes
             #se genera la representacion matricial estandar de la transformacion rotacion en R^2 (matriz 2x2)
             rotation_matrix = np.array(((np.cos(rotation_angle),np.sin(-1 * rotation_angle)),(np.sin(rotation_angle),np.cos(rotation_angle))))
-            square_cnt = np.dot(square_cnt,rotation_matrix) #el resultado sera una matriz 4x2 y en cada estaran los nuevos vertices rotados
+            square_cnt = np.dot(square_cnt,rotation_matrix) #el resultado sera una matriz 4x2 y en cada fila estaran los nuevos vertices rotados
             square_cnt = square_cnt.astype(np.int)
 
             #se centra y dibuja la figura en la imagen
